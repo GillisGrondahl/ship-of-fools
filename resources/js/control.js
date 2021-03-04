@@ -26,15 +26,16 @@ function getInfo() {
     var password = document.getElementById("psw").value
     var typeofuser = null;
 	
-//console.log("Your username is" + username + " and password is" + password)
+	//looks though all the users in DBloaded.js and sets usertype into the corresponging type if
+	//user+password matches
     for(i = 0; i < DB.users.length; i++){
 		
         if(username == DB.users[i].username && password == DB.users[i].password) { 
 			typeofuser = DB.users[i].credentials ;
 		}
         
-     }
-	
+    }
+	// checks which type of user logged in and switches onto the corresponding page or error if no user+password matched
 	switch (typeofuser) {
   		case "0":
 			window.location.href = "bartenderMain.html";
@@ -47,24 +48,9 @@ function getInfo() {
 	}
 	
 	
- //for(i = 0; i < DB.users.length; i++){
-   //    var typeofuser = 1
-     // else if(username == DB.users[i].username && password == DB.users[i].password && typeofuser == "bartender") { login = 3 }
- //}
-   // return console.log("Your username and/or password is wrong" + Username +" " + Password)
-   // for(i = 0; i < DB.users.length; i++)
-   // if(username != DB.users[i].username && password != DB.users[i].password) {  window.location.href = "https://datahahah.ytmnd.com"}
- //else {  window.location.href = "https://datahahah.ytmnd.com"}
 
-    //window.location.href = "vipProfile.html"
-//var userID == DB.users[i].user_id;
-    //var userID == getElementById(user_id)//DB.users[i].user_id.value  var userID == DB.users[i].user_id;
 
-    //if (login == 2 ) {window.location.href = "vipProfile.html"}
-    //else if (login == 3 ) {window.location.href = "bartenderMain.html"}
-   // else { window.location.href = "https://datahahah.ytmnd.com"}
-
-    }
+}
 
 
 function userDetails(userName) {
