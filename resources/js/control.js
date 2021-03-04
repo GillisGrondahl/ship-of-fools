@@ -24,15 +24,29 @@ var userID = 0
 function getInfo() {
     var username = document.getElementById("uname").value
     var password = document.getElementById("psw").value
-    var typeofuser = 1
-    var login = 1
+    var typeofuser = null;
+	
 //console.log("Your username is" + username + " and password is" + password)
     for(i = 0; i < DB.users.length; i++){
-     var typeofuser = DB.users[i].type_of_user
-        if(username == DB.users[i].username && password == DB.users[i].password && typeofuser == "VIP") { login = 2 && userID = DB.users[i].user_id  }
-        else if(username == DB.users[i].username && password == DB.users[i].password && typeofuser == "Bartender") { login = 3 && userID = DB.users[i].user_id }
-        console.log(userID) //needs to be fixed
-      }
+		
+        if(username == DB.users[i].username && password == DB.users[i].password) { 
+			typeofuser = DB.users[i].credentials ;
+		}
+        
+     }
+	
+	switch (typeofuser) {
+  		case "0":
+			window.location.href = "bartenderMain.html";
+			break;
+  		case "3":
+			window.location.href = "vipProfile.html";
+			break;
+  		default:
+			window.location.href = "https://datahahah.ytmnd.com";
+	}
+	
+	
  //for(i = 0; i < DB.users.length; i++){
    //    var typeofuser = 1
      // else if(username == DB.users[i].username && password == DB.users[i].password && typeofuser == "bartender") { login = 3 }
@@ -46,9 +60,9 @@ function getInfo() {
 //var userID == DB.users[i].user_id;
     //var userID == getElementById(user_id)//DB.users[i].user_id.value  var userID == DB.users[i].user_id;
 
-    if (login == 2 ) {window.location.href = "vipProfile.html"}
-    else if (login == 3 ) {window.location.href = "bartenderMain.html"}
-    else { window.location.href = "https://datahahah.ytmnd.com"}
+    //if (login == 2 ) {window.location.href = "vipProfile.html"}
+    //else if (login == 3 ) {window.location.href = "bartenderMain.html"}
+   // else { window.location.href = "https://datahahah.ytmnd.com"}
 
     }
 

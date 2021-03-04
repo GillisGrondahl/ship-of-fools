@@ -10,6 +10,16 @@ var DB = {
             "email": "jory.assies@it.uu.se",
             "phone": "0704811411"
         },
+		{
+            "user_id": "3",
+            "credentials": "3",
+            "password": "123",
+            "username": "Vip",
+            "first_name": "Sulayman",
+            "last_name": "Street",
+            "email": "sulayman.street@it.uu.se",
+            "phone": "0701517627"
+        },
         {
             "user_id": "28",
             "credentials": "3",
