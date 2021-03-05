@@ -20,7 +20,7 @@ function update_language(){
 }
 //==============================
 
-var userID = 0
+var userID = null;
 function getInfo() {
     var username = document.getElementById("uname").value
     var password = document.getElementById("psw").value
@@ -31,7 +31,8 @@ function getInfo() {
     for(i = 0; i < DB.users.length; i++){
 		
         if(username == DB.users[i].username && password == DB.users[i].password) { 
-			typeofuser = DB.users[i].credentials ;
+			typeofuser = DB.users[i].credentials;
+			userID = DB.users[i].user_id;
 		}
         
     }
@@ -39,12 +40,15 @@ function getInfo() {
 	switch (typeofuser) {
   		case "0":
 			window.location.href = "bartenderMain.html";
+			console.log(userID);
 			break;
   		case "3":
 			window.location.href = "vipProfile.html";
+			console.log(userID);
 			break;
   		default:
 			window.location.href = "https://datahahah.ytmnd.com";
+			console.log(userID);
 	}
 	
 	
